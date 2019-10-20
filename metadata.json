@@ -1,0 +1,18 @@
+{
+  "name": "faintdream-eyaml",
+  "version": "0.1.0",
+  "author": "akash",
+  "summary": "This module is used to install and configure on puppet master.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/faintdream/eyaml.git",
+  "project_page": "https://github.com/faintdream/eyaml",
+  "issues_url": "https://github.com/faintdream/eyaml/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "data_provider": null
+}
+
