@@ -1,5 +1,6 @@
 class eyaml::prerequirement {
-  exec {'eyaml createkeys':
+  exec { 'eyaml createkeys':
+    command => 'eyaml createkeys  --pkcs7-private-key=/etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem  --pkcs7-public-key=/etc/puppetlabs/puppet/eyaml/public_key.pkcs7.pem',
     path    => ['/opt/puppetlabs/puppet/bin'],
     creates => '/etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem',
     require  => Class["eyaml::install"],
@@ -34,7 +35,7 @@ class eyaml::prerequirement {
   file_line { 'export EYAML_CONFIG':
     path  => '/root/.bashrc',
     line  => 'export EYAML_CONFIG=/etc/puppetlabs/code/environments/production/config.yaml',
-    match => "^export\ EYAML_CONFIG"
+    match => "^export EYAML_CONFIG"
   }
 
 File["eyaml config"] -> File_Line["export EYAML_CONFIG"]-> Exec["eyaml createkeys"] -> File["eyaml private key"] -> File["eyaml public key"] 
