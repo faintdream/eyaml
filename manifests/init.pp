@@ -43,6 +43,7 @@
 # Copyright 2019 Your name here, unless otherwise noted.
 #
 class eyaml {
-
-
+  include eyaml::install 
+  include eyaml::prerequirement
+ 
 }
