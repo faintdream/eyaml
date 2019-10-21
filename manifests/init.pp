@@ -45,5 +45,6 @@
 class eyaml {
   include eyaml::install 
   include eyaml::prerequirement
- 
+  include eyaml::config
+
 }
