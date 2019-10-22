@@ -12,6 +12,13 @@ class eyaml::prerequirement {
     owner      => 'puppet',
     mode       => '0700',
   }
+
+  file { '/etc/puppetlabs/puppet/eyaml':
+    ensure => directory,
+    owner  => 'puppet',
+    mode   => '0700',
+
+  }
   
   file_line { 'export EYAML_CONFIG':
     path  => '/root/.bash_profile',
